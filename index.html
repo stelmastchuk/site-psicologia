@@ -10,8 +10,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body id="topo">
   <div id="app">
+    <header class="nav" :class="{ 'nav--aberto': menuAberto }">
+      <div class="container nav__inner">
+        <a href="#topo" class="nav__marca">
+          Giovana Lopes Stelmastchuk
+          <span>Psicóloga Clínica | CRP: 08/41556</span>
+        </a>
+        <button class="nav__hamburguer" @click="menuAberto = !menuAberto" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav__links" @click="menuAberto = false">
+          <a href="#sobre">Sobre</a>
+          <a href="#quem-sou-eu">Quem sou eu</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#faq">FAQ</a>
+          <a :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn nav__cta">Agendar sessão</a>
+        </nav>
+      </div>
+    </header>
     <!-- seções entram aqui nas próximas tasks -->
   </div>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
