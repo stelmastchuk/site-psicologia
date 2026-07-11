@@ -218,7 +218,7 @@ section { padding-block: var(--espaco-secao); }
 /* resposta com transição de altura via grid */
 .faq__resposta-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; background: var(--cor-bege); }
 .faq__item--aberto .faq__resposta-wrap { grid-template-rows: 1fr; }
-.faq__resposta { overflow: hidden; padding: 0 1.6em; margin: 0; }
+.faq__resposta { overflow: hidden; padding: 0 1.6em; margin: 0; transition: padding .35s ease; }
 .faq__item--aberto .faq__resposta { padding: 1.2em 1.6em; }
 
 @media (max-width: 860px) {
@@ -242,3 +242,8 @@ section { padding-block: var(--espaco-secao); }
 @media (max-width: 560px) {
   .rodape__inner { flex-direction: column; text-align: center; }
 }
+
+/* salvaguardas finais */
+body { overflow-x: hidden; }
+.deco { max-width: 40vw; }
+h1, h2 { overflow-wrap: break-word; }

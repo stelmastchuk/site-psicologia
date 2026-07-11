@@ -26,7 +26,7 @@ createApp({
     }
   },
   mounted() {
-    const alvos = document.querySelectorAll('section');
+    const alvos = document.querySelectorAll('section:not(#sobre)');
     const obs = new IntersectionObserver((entradas) => {
       entradas.forEach((e) => {
         if (e.isIntersecting) {
