@@ -1,0 +1,6 @@
+.DS_Store
+*:Zone.Identifier
+*.Zone.Identifier
+node_modules/
+.vscode/
+.superpowers/
