@@ -244,6 +244,6 @@ section { padding-block: var(--espaco-secao); }
 }
 
 /* salvaguardas finais */
-body { overflow-x: hidden; }
+body { overflow-x: clip; }
 .deco { max-width: 40vw; }
 h1, h2 { overflow-wrap: break-word; }
