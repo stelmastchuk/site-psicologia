@@ -43,6 +43,13 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 500; color: var(--co
 .container { width: min(100% - 2.5rem, var(--largura-max)); margin-inline: auto; }
 section { padding-block: var(--espaco-secao); }
 
+/* ===== Scroll reveal ===== */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.revelado { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 /* ===== Botão ===== */
 .btn {
   font-family: var(--fonte-ui);

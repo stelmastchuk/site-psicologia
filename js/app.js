@@ -24,5 +24,17 @@ createApp({
     toggleFaq(i) {
       this.faqAberto = this.faqAberto === i ? null : i;
     }
+  },
+  mounted() {
+    const alvos = document.querySelectorAll('section');
+    const obs = new IntersectionObserver((entradas) => {
+      entradas.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revelado');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    alvos.forEach((s) => { s.classList.add('reveal'); obs.observe(s); });
   }
 }).mount('#app');
