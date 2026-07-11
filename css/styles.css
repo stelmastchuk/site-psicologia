@@ -134,3 +134,16 @@ section { padding-block: var(--espaco-secao); }
   .origem__grid { grid-template-columns: 1fr; }
   .origem__divisoria { width: 60%; height: 2px; justify-self: center; }
 }
+
+/* ===== Compreender ===== */
+.compreender__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.compreender__texto h2 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); margin-bottom: 1.2rem; }
+.compreender__texto p { margin-bottom: 1rem; }
+.compreender__card { position: relative; border: 1px solid var(--cor-nude); border-radius: 16px; padding: clamp(2rem, 4vw, 3rem); }
+.compreender__card p { font-family: var(--fonte-ui); font-weight: 600; color: var(--cor-escura); font-size: clamp(1.1rem, 2vw, 1.4rem); }
+.deco--ramo { position: absolute; top: -55px; right: -10px; width: 130px; opacity: .9; }
+
+@media (max-width: 860px) {
+  .compreender__grid { grid-template-columns: 1fr; }
+  .deco--ramo { width: 90px; top: -40px; }
+}
