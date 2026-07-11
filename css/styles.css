@@ -121,3 +121,16 @@ section { padding-block: var(--espaco-secao); }
 @media (max-width: 860px) {
   .peso__grid { grid-template-columns: 1fr; }
 }
+
+/* ===== De Onde Vem ===== */
+.origem__grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.origem__col h2 { font-size: clamp(1.5rem, 3.2vw, 2.4rem); margin-bottom: 1.2rem; }
+.origem__col p { margin-bottom: 1rem; }
+.origem__divisoria { width: 2px; align-self: stretch; background: var(--cor-nude); }
+.origem__col--destaque { text-align: center; }
+.origem__col--destaque .btn { margin-top: 1rem; }
+
+@media (max-width: 860px) {
+  .origem__grid { grid-template-columns: 1fr; }
+  .origem__divisoria { width: 60%; height: 2px; justify-self: center; }
+}
