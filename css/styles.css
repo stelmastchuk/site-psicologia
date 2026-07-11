@@ -1,0 +1,61 @@
+/* ===== Reset ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+html { scroll-behavior: smooth; }
+
+/* ===== The Seasons (plugar arquivo real depois) =====
+@font-face {
+  font-family: 'The Seasons';
+  src: url('fonts/the-seasons.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+*/
+
+/* ===== Tokens ===== */
+:root {
+  --cor-fundo: #F2EDE7;
+  --cor-escura: #3D2B1F;
+  --cor-nude: #A68A6D;
+  --cor-bege: #EFE4D6;
+  --cor-texto: #2B2B2B;
+  --fonte-titulo: 'The Seasons', 'Cormorant Garamond', Georgia, serif;
+  --fonte-corpo: 'Open Sans', system-ui, sans-serif;
+  --fonte-ui: 'Montserrat', system-ui, sans-serif;
+  --largura-max: 1200px;
+  --espaco-secao: clamp(3.5rem, 8vw, 7rem);
+}
+
+/* ===== Base ===== */
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  line-height: 1.7;
+  /* textura de papel sutil */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.33 0 0 0 0 0.24 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 500; color: var(--cor-escura); line-height: 1.15; }
+
+.container { width: min(100% - 2.5rem, var(--largura-max)); margin-inline: auto; }
+section { padding-block: var(--espaco-secao); }
+
+/* ===== Botão ===== */
+.btn {
+  font-family: var(--fonte-ui);
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  letter-spacing: 0.03em;
+  background: var(--cor-nude);
+  color: var(--cor-escura);
+  padding: 0.9em 2em;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform .2s ease, filter .2s ease;
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
