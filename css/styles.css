@@ -161,3 +161,16 @@ section { padding-block: var(--espaco-secao); }
   .sobre-mim__grid { grid-template-columns: 1fr; }
   .sobre-mim__foto img { position: static; aspect-ratio: 4/3; }
 }
+
+/* ===== Como Funciona / Etapas ===== */
+.etapas__titulo { font-family: var(--fonte-ui); text-align: center; letter-spacing: .06em; color: var(--cor-nude); font-size: clamp(1rem, 2.4vw, 1.4rem); text-transform: uppercase; margin-bottom: 2rem; }
+.etapas__faixa { background: var(--cor-nude); color: var(--cor-escura); border-radius: 22px; padding: clamp(1.4rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3rem); text-align: center; max-width: 900px; margin: 0 auto 3.5rem; }
+.etapas__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 4vw, 3rem); text-align: center; }
+.etapa__icone { width: 80px; height: 80px; object-fit: contain; margin: 0 auto 1rem; }
+.etapa h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+.regua--centro { margin-inline: auto; width: 60px; }
+.etapas__rodape { text-align: center; color: var(--cor-nude); font-size: 1.05rem; max-width: 720px; margin: 3rem auto 0; }
+
+@media (max-width: 780px) {
+  .etapas__grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+}
