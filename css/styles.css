@@ -174,3 +174,15 @@ section { padding-block: var(--espaco-secao); }
 @media (max-width: 780px) {
   .etapas__grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
 }
+
+/* ===== Talvez Faça Sentido ===== */
+.sentido__grid { position: relative; }
+.sentido__cabecalho h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); margin-bottom: 2rem; max-width: 18ch; }
+.sentido__lista { max-width: 900px; }
+.sentido__lista li { margin-bottom: .9rem; font-size: clamp(1rem, 1.8vw, 1.15rem); }
+.sentido__final { font-weight: 700; color: var(--cor-escura); }
+.deco--flor { position: absolute; right: 0; top: 20%; width: clamp(90px, 14vw, 170px); opacity: .9; pointer-events: none; }
+
+@media (max-width: 860px) {
+  .deco--flor { position: static; width: 110px; margin: 2rem auto 0; }
+}
