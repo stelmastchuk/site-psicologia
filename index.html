@@ -18,7 +18,7 @@
           Giovana Lopes Stelmastchuk
           <span>Psicóloga Clínica | CRP: 08/41556</span>
         </a>
-        <button class="nav__hamburguer" @click="menuAberto = !menuAberto" aria-label="Abrir menu">
+        <button class="nav__hamburguer" type="button" @click="menuAberto = !menuAberto" :aria-label="menuAberto ? 'Fechar menu' : 'Abrir menu'" :aria-expanded="menuAberto">
           <span></span><span></span><span></span>
         </button>
         <nav class="nav__links" @click="menuAberto = false">
@@ -26,7 +26,7 @@
           <a href="#quem-sou-eu">Quem sou eu</a>
           <a href="#como-funciona">Como funciona</a>
           <a href="#faq">FAQ</a>
-          <a :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn nav__cta">Agendar sessão</a>
+          <a href="https://wa.me/5544999677237?text=Oi%20gostaria%20de%20agendar%20uma%20consulta" :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn nav__cta">Agendar sessão</a>
         </nav>
       </div>
     </header>
@@ -43,7 +43,7 @@
             <li>Sem ter todas as respostas.</li>
           </ul>
           <p>A terapia é um espaço para compreender, com calma, aquilo que parece difícil de carregar sozinha.</p>
-          <a :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn">Agendar minha primeira sessão</a>
+          <a href="https://wa.me/5544999677237?text=Oi%20gostaria%20de%20agendar%20uma%20consulta" :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn">Agendar minha primeira sessão</a>
         </div>
         <div class="hero__foto">
           <img src="images/fotos-perfil/43D67DF7-7DCC-4E4A-90B6-4734C525A94F.png" alt="Giovana Lopes, psicóloga clínica, em seu consultório">
@@ -84,7 +84,7 @@
         <div class="origem__col origem__col--destaque">
           <h2>Nem tudo o que pesa é visível.</h2>
           <p>E nem tudo precisa continuar sendo carregado sozinho.</p>
-          <a :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn">Vamos conversar sobre isso?</a>
+          <a href="https://wa.me/5544999677237?text=Oi%20gostaria%20de%20agendar%20uma%20consulta" :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn">Vamos conversar sobre isso?</a>
         </div>
       </div>
     </section>
@@ -121,12 +121,12 @@
           <p>Mais do que apresentar minha formação, espero que este espaço tenha permitido que você conhecesse um pouco da forma como trabalho e do cuidado que procuro oferecer em cada atendimento.</p>
           <p><strong>Se você sentir que esse jeito de conduzir a terapia faz sentido para a sua história, será um prazer caminhar ao seu lado.</strong></p>
         </div>
-        <a :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn">Agendar minha sessão</a>
+        <a href="https://wa.me/5544999677237?text=Oi%20gostaria%20de%20agendar%20uma%20consulta" :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn">Agendar minha sessão</a>
       </div>
     </section>
     <section id="como-funciona" class="etapas">
       <div class="container">
-        <p class="etapas__titulo">Na terapia, compreender é apenas o começo.</p>
+        <h2 class="etapas__titulo">Na terapia, compreender é apenas o começo.</h2>
         <div class="etapas__faixa">
           Cada processo acontece de maneira única, respeitando a história, o contexto e o tempo de cada pessoa. Ainda assim, alguns passos costumam estar presentes ao longo desse caminho.
         </div>
@@ -187,11 +187,11 @@
             v-for="(item, i) in faq"
             :key="i"
           >
-            <button class="faq__pergunta" @click="toggleFaq(i)" :aria-expanded="faqAberto === i">
+            <button class="faq__pergunta" type="button" @click="toggleFaq(i)" :aria-expanded="faqAberto === i" :aria-controls="'faq-resp-' + i">
               <span>{{ item.pergunta }}</span>
               <span class="faq__seta">▸</span>
             </button>
-            <div class="faq__resposta-wrap">
+            <div class="faq__resposta-wrap" :id="'faq-resp-' + i" :aria-hidden="faqAberto !== i">
               <p class="faq__resposta">{{ item.resposta }}</p>
             </div>
           </div>
@@ -203,7 +203,7 @@
         <h2>Quando você estiver pronta...</h2>
         <p>Dar o primeiro passo nem sempre é simples. E tudo bem. Se este espaço fez sentido para você, talvez seja porque alguma parte da sua história encontrou lugar nestas palavras.</p>
         <p>Quando você sentir que é o momento, será um prazer construir esse processo ao seu lado, com respeito ao seu tempo, à sua história e àquilo que faz sentido para a sua vida.</p>
-        <a :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn">Agendar minha primeira sessão</a>
+        <a href="https://wa.me/5544999677237?text=Oi%20gostaria%20de%20agendar%20uma%20consulta" :href="contatos.whatsapp" target="_blank" rel="noopener" class="btn">Agendar minha primeira sessão</a>
       </div>
     </section>
     <footer class="rodape">
@@ -213,9 +213,9 @@
           <span>Psicóloga Clínica | CRP: 08/41556</span>
         </a>
         <div class="rodape__contatos">
-          <a :href="contatos.email" aria-label="Enviar email"><img src="images/icons-contato/IMG_1559.png" alt="Email"></a>
-          <a :href="contatos.whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="images/icons-contato/IMG_1558.png" alt="Telefone"></a>
-          <a :href="contatos.instagram" target="_blank" rel="noopener" aria-label="Instagram"><img src="images/icons-contato/IMG_1557.png" alt="Instagram"></a>
+          <a href="mailto:psi.giovanalopes@gmail.com" :href="contatos.email" aria-label="Enviar email"><img src="images/icons-contato/IMG_1559.png" alt=""></a>
+          <a href="https://wa.me/5544999677237?text=Oi%20gostaria%20de%20agendar%20uma%20consulta" :href="contatos.whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="images/icons-contato/IMG_1558.png" alt=""></a>
+          <a href="https://instagram.com/psi.giovanalopes" :href="contatos.instagram" target="_blank" rel="noopener" aria-label="Instagram"><img src="images/icons-contato/IMG_1557.png" alt=""></a>
         </div>
       </div>
     </footer>

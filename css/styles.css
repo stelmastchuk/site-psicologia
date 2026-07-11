@@ -3,7 +3,7 @@
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
 /* ===== The Seasons (plugar arquivo real depois) =====
 @font-face {
@@ -48,6 +48,7 @@ section { padding-block: var(--espaco-secao); }
 .reveal.revelado { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
 }
 
 /* ===== Botão ===== */
@@ -90,9 +91,9 @@ section { padding-block: var(--espaco-secao); }
     flex-direction: column; align-items: flex-start;
     background: var(--cor-fundo); padding: 1.2rem 1.25rem;
     gap: 1.1rem; border-bottom: 1px solid rgba(61,43,31,0.08);
-    transform: translateY(-120%); opacity: 0; pointer-events: none; transition: .3s;
+    transform: translateY(-120%); opacity: 0; pointer-events: none; visibility: hidden; transition: .3s;
   }
-  .nav--aberto .nav__links { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav--aberto .nav__links { transform: translateY(0); opacity: 1; pointer-events: auto; visibility: visible; }
   .nav__cta { align-self: stretch; text-align: center; }
 }
 
