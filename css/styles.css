@@ -147,13 +147,11 @@ section { padding-block: var(--espaco-secao); }
 .compreender__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .compreender__texto h2 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); margin-bottom: 1.2rem; }
 .compreender__texto p { margin-bottom: 1rem; }
-.compreender__card { position: relative; border: 1px solid var(--cor-nude); border-radius: 16px; padding: clamp(2rem, 4vw, 3rem); }
+.compreender__card { border: 1px solid var(--cor-nude); border-radius: 16px; padding: clamp(2rem, 4vw, 3rem); }
 .compreender__card p { font-family: var(--fonte-ui); font-weight: 600; color: var(--cor-escura); font-size: clamp(1.1rem, 2vw, 1.4rem); }
-.deco--ramo { position: absolute; top: clamp(-90px, -8vw, -60px); right: -8px; width: clamp(130px, 17vw, 200px); opacity: .9; }
 
 @media (max-width: 860px) {
   .compreender__grid { grid-template-columns: 1fr; }
-  .deco--ramo { width: 120px; top: -55px; right: 0; }
 }
 
 /* ===== Quem Sou Eu ===== */
@@ -162,10 +160,10 @@ section { padding-block: var(--espaco-secao); }
 .sobre-mim__texto h2 { font-size: clamp(1.5rem, 3.2vw, 2.3rem); margin-bottom: 1.2rem; }
 .sobre-mim__texto p { margin-bottom: 1rem; }
 .sobre-mim__texto strong, .sobre-mim__formacao strong { color: var(--cor-escura); font-weight: 600; }
-.sobre-mim__formacao { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: clamp(2.5rem, 6vw, 5rem); margin-top: var(--espaco-secao); }
+.sobre-mim__formacao { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: stretch; gap: clamp(1.5rem, 4vw, 3rem); margin-top: var(--espaco-secao); }
 .sobre-mim__formacao-texto { max-width: 60ch; }
-.sobre-mim__formacao-deco { display: flex; justify-content: center; }
-.sobre-mim__formacao-deco img { width: clamp(220px, 30vw, 380px); opacity: .9; transform: scaleX(-1); }
+.sobre-mim__formacao-deco { display: flex; align-items: center; justify-content: center; }
+.sobre-mim__formacao-deco img { width: 100%; max-width: clamp(260px, 36vw, 460px); height: 100%; max-height: 480px; object-fit: contain; opacity: .9; }
 .sobre-mim__formacao p { margin-bottom: 1.15rem; text-align: justify; text-justify: inter-word; hyphens: auto; }
 .sobre-mim__formacao p:last-child { margin-bottom: 0; }
 
@@ -176,7 +174,7 @@ section { padding-block: var(--espaco-secao); }
   .sobre-mim__formacao-texto { max-width: none; }
   .sobre-mim__formacao p { text-align: center; hyphens: manual; }
   .sobre-mim__formacao-deco { order: -1; }
-  .sobre-mim__formacao-deco img { width: clamp(170px, 45vw, 220px); }
+  .sobre-mim__formacao-deco img { width: auto; height: auto; max-width: clamp(200px, 55vw, 280px); max-height: none; }
 }
 
 /* ===== Como Funciona / Etapas ===== */
